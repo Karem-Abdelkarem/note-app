@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- fonts inter and Aclonica-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aclonica&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link href="/src/style.css" rel="stylesheet">
+    <title>Note App</title>
+</head>
+
+<body>
+    <main class="flex text-black font-inter overflow-hidden">
+        <!-- Slide bar on mobile view -->
+        <section class="sidebar px-4 py-5 bg-gray-hover flex-1 min-w-[204px] h-screen hidden">
+            <header class="pt-2.5">
+                <img class="close-sidebar cursor-pointer" src="/assets/cross.svg" alt="close side bar icon">
+            </header>
+            <article class="relative flex flex-col items-start gap-1 text-[16px] mt-10 p-3">
+                <a href="index.html"><button class=" text-gray-500 leading-7 cursor-pointer">Notes</button></a>
+                <a href="add-note.html"><button
+                        class=" text-black leading-7 after:content-[''] after:absolute after:h-5 after:w-[3px] after:bg-orange-300 after:left-0 after:top-[47px] cursor-pointer">Add
+                        Notes</button></a>
+            </article>
+        </section>
+        <section class="px-4 py-5 w-screen">
+            <header class="relative mb-12 w-full">
+                <article class="flex items-center justify-between">
+                    <img class="menu-icon w-[40px] p-2 cursor-pointer" src="/assets/Menu.svg" alt="side bar icon">
+                    <h1 class="text-[15px] font-aclonica font-normal text-orange-300">
+                        Almdrasa Note
+                    </h1>
+                    <img class="w-[40px] p-2 cursor-pointer hidden" src="/assets/cross.svg" alt="close search bar icon">
+                    <img class="search-icon w-[40px] p-2 cursor-pointer" src="/assets/Search.svg" alt="search icon">
+                </article>
+                <article
+                    class="search-bar absolute -top-27 mb-5 transition-all after:content-[''] after:absolute after:w-screen after:h-27 after:bg-gray-hover after:-top-5 after:-left-5 after:-z-10">
+                    <form class="transition-all mt-10" action="">
+                        <label class="flex bg-white px-3 py-2 rounded-[7px]">
+                            <svg class="pr-1.5 w-[20px] stroke-gray-500" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20" fill="none">
+                                <g clip-path="url(#clip0_357_13)">
+                                    <path
+                                        d="M9.06226 15.625C12.6866 15.625 15.6248 12.6869 15.6248 9.0625C15.6248 5.43813 12.6866 2.5 9.06226 2.5C5.43789 2.5 2.49976 5.43813 2.49976 9.0625C2.49976 12.6869 5.43789 15.625 9.06226 15.625Z"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M13.7024 13.7031L17.4993 17.5" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_357_13">
+                                        <rect width="20" height="20" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <input class="flex-1 outline-0" id="search" type="text" placeholder="search">
+                        </label>
+                    </form>
+                </article>
+            </header>
+            <article class="mt-14">
+                <h1 class="text-[26px]">Add Note</h1>
+                <form class="flex flex-col mt-9" action="">
+                    <label class="text-sm text-gray-500 mb-2.5" for="title">Title*</label>
+                    <input class="title-input bg-gray-hover rounded-[7px] py-3 px-2 outline-0" id="title" type="text"
+                        required>
+                    <label class="text-sm text-gray-500 mt-9 mb-2.5" for="author">Author*</label>
+                    <input class="author-input bg-gray-hover mb-9 rounded-[7px] py-3 px-2 outline-0" id="author"
+                        type="text" required>
+                    <label class="text-sm text-gray-500 mb-2.5" for="note">Your Note*</label>
+                    <textarea class="note-input bg-gray-hover rounded-[7px] px-2 outline-0" name="note" id="note"
+                        rows="6" required>
+                    </textarea>
+                </form>
+                <article class="flex justify-between text-white text-sm mt-10">
+                    <button class="add-note bg-orange-300 py-2.5 px-[22px] rounded-[5px] cursor-pointer">Add
+                        Note</button>
+                    <button class="add-p-note bg-orange-300 py-2.5 px-4 rounded-[5px] cursor-pointer">Add Pinned
+                        Note</button>
+                </article>
+            </article>
+        </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

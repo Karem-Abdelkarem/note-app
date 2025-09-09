@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+  --color-black: #303030;
+  --color-orange-300: #EC7160;
+  --color-orange-500: #D82700;
+  --color-gray-500: #898989;
+  --color-gray-300: #E7E7E9;
+  --color-gray-hover: #F6F6F6;
+  --font-aclonica: Aclonica, sans-serif;
+  --font-inter: Inter, sans-serif;
+}
