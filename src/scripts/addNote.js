@@ -2,7 +2,12 @@ import {
   addNoteBtn,
   addPinnedBtn,
   authorInput,
+  closeSidebarIcon,
+  menuIcon,
   noteInput,
+  searchBar,
+  searchIcon,
+  sidebar,
   titleInput,
 } from "./elements";
 import { fetchFromDB, saveInDB } from "./utils";
@@ -24,16 +29,28 @@ const addNote = (isPinned) => {
     isPinned: isPinned,
   };
 
-  const notes = fetchFromDB("note") || [];
+  const notes = fetchFromDB("notes") || [];
   notes.unshift(note);
 
   saveInDB("notes", notes);
-
   titleInput.value = "";
   authorInput.value = "";
   noteInput.value = "";
+  window.location.href = "index.html";
 };
 
+// sidebar event
+menuIcon.addEventListener("click", () => {
+  sidebar.classList.remove("hidden");
+});
+closeSidebarIcon.addEventListener("click", () => {
+  sidebar.classList.add("hidden");
+});
+//  search bar event
+searchIcon.addEventListener("click", () => {
+  searchBar.classList.toggle("top-0");
+});
+//  add note
 addNoteBtn.addEventListener("click", () => {
   const isPinned = false;
   addNote(isPinned);
