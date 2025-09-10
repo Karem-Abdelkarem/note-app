@@ -8,3 +8,5 @@ export const authorInput = document.querySelector(".author-input");
 export const noteInput = document.querySelector(".note-input");
 export const addNoteBtn = document.querySelector(".add-note");
 export const addPinnedBtn = document.querySelector(".add-p-note");
+export const pinnedNoteUl = document.querySelector(".pinned-note-ul");
+export const noteUl = document.querySelector(".notes-ul");

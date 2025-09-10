@@ -1,13 +1,10 @@
 import {
-  addNoteBtn,
-  addPinnedBtn,
   closeSidebarIcon,
   menuIcon,
   searchBar,
   searchIcon,
   sidebar,
 } from "./elements";
-import { addNote } from "./utils";
 
 export const initControllerEvents = () => {
   // sidebar event
@@ -21,13 +18,5 @@ export const initControllerEvents = () => {
   searchIcon.addEventListener("click", () => {
     searchBar.classList.toggle("top-0");
   });
-  //   add note
-  addNoteBtn.addEventListener("click", () => {
-    const isPinned = false;
-    addNote(isPinned);
-  });
-  addPinnedBtn.addEventListener("click", () => {
-    const isPinned = true;
-    addNote(isPinned);
-  });
+  //  add note
 };
