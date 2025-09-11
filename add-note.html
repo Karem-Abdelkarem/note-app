@@ -68,15 +68,19 @@
                     <label class="text-sm text-gray-500 mb-2.5" for="title">Title*</label>
                     <input class="title-input bg-gray-hover rounded-[7px] py-3 px-2 outline-0" id="title" type="text"
                         required>
-                    <label class="text-sm text-gray-500 mt-9 mb-2.5" for="author">Author*</label>
-                    <input class="author-input bg-gray-hover mb-9 rounded-[7px] py-3 px-2 outline-0" id="author"
-                        type="text" required>
-                    <label class="text-sm text-gray-500 mb-2.5" for="note">Your Note*</label>
+                    <p class="title-error-message text-red-500 text-sm pl-2 pt-1 invisible">Title is required*</p>
+                    <label class="text-sm text-gray-500 mt-3 mb-2.5" for="author">Author*</label>
+                    <input class="author-input bg-gray-hover rounded-[7px] py-3 px-2 outline-0" id="author" type="text"
+                        required>
+                    <p class="author-error-message text-red-500 text-sm pl-2 pt-1 invisible">Author is required</p>
+                    <label class="text-sm text-gray-500 mb-2.5 mt-3.5" for="note">Your Note*</label>
                     <textarea class="note-input bg-gray-hover rounded-[7px] px-2 outline-0" name="note" id="note"
                         rows="6" required>
                     </textarea>
+                    <p class="note-error-message text-red-500 text-sm pl-2 pt-1 invisible">Note must have at least 5
+                        characters</p>
                 </form>
-                <article class="flex justify-between text-white text-sm mt-10">
+                <article class="flex justify-between text-white text-sm mt-4">
                     <button class="add-note bg-orange-300 py-2.5 px-[22px] rounded-[5px] cursor-pointer">Add
                         Note</button>
                     <button class="add-p-note bg-orange-300 py-2.5 px-4 rounded-[5px] cursor-pointer">Add Pinned

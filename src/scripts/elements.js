@@ -11,3 +11,8 @@ export const addPinnedBtn = document.querySelector(".add-p-note");
 export const pinnedNoteUl = document.querySelector(".pinned-note-ul");
 export const noteUl = document.querySelector(".notes-ul");
 export const noteDetailsSection = document.querySelector(".note-details");
+export const titleErrorMessage = document.querySelector(".title-error-message");
+export const authorErrorMessage = document.querySelector(
+  ".author-error-message"
+);
+export const noteErrorMessage = document.querySelector(".note-error-message");
