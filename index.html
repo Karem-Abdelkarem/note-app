@@ -20,7 +20,7 @@
     <!-- Slide bar on mobile view -->
     <section class="sidebar px-4 py-5 bg-gray-hover flex-1 min-w-[204px] h-screen hidden">
       <header class="pt-2.5">
-        <img class="close-sidebar cursor-pointer" src="/assets/cross.svg" alt="close side bar icon">
+        <img class="close-sidebar cursor-pointer" src="./assets/cross.svg" alt="close side bar icon">
       </header>
       <article class="relative flex flex-col items-start gap-1 mt-10 p-3">
         <a href="index.html"><button
@@ -33,17 +33,17 @@
     <section class="relative px-4 py-5 min-w-screen h-screen flex-1 overflow-y-auto overflow-x-hidden transition-all">
       <header class="main-header relative mb-12 w-full transition-all">
         <article class="flex items-center justify-between">
-          <img class="menu-icon w-[40px] p-2 cursor-pointer" src="public/assets/Menu.svg" alt="side bar icon">
+          <img class="menu-icon w-[40px] p-2 cursor-pointer" src="./assets/Menu.svg" alt="side bar icon">
           <a href="index.html">
             <h1 class="text-[15px] font-aclonica font-normal text-orange-300">
               Almdrasa Note
             </h1>
           </a>
-          <img class="w-[40px] p-2 cursor-pointer hidden" src="public/assets/cross.svg" alt="close search bar icon">
-          <img class="search-icon w-[40px] p-2 cursor-pointer" src="/assets/Search.svg" alt="search icon">
+          <img class="w-[40px] p-2 cursor-pointer hidden" src="./assets/cross.svg" alt="close search bar icon">
+          <img class="search-icon w-[40px] p-2 cursor-pointer" src="./assets/Search.svg" alt="search icon">
         </article>
         <article
-          class="search-bar absolute -top-27 mb-5 transition-all after:content-[''] after:absolute after:w-screen after:h-27 after:bg-gray-hover after:-top-5 after:-left-5 after:-z-10">
+          class="search-bar absolute -top-27 mb-5 transition-all after:content-[''] after:absolute after:w-screen after:h-27 after:bg-gray-hover after:-top-5 after:-left-5 after:border-b-1 after:border-gray-300 after:-z-10">
           <form class="transition-all mt-10" action="">
             <label class="flex bg-white px-3 py-2 rounded-[7px]">
               <svg class="pr-1.5 w-[20px] stroke-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
@@ -61,7 +61,7 @@
                   </clipPath>
                 </defs>
               </svg>
-              <input class="flex-1 outline-0" id="search" type="text" placeholder="search">
+              <input class="search-input flex-1 outline-0" id="search" type="search" placeholder="search">
             </label>
           </form>
         </article>

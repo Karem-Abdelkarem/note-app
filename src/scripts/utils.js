@@ -20,6 +20,37 @@ export const deleteNote = (index) => {
   renderNotes(notes);
 };
 
+export const onSearchInputChange = (searchValue) => {
+  const notes = fetchFromDB("notes") || [];
+  const normalizedValue = searchValue.toLowerCase().trim();
+
+  if (normalizedValue === "") {
+    renderNotes(notes);
+    return;
+  }
+
+  const filteredNotes = notes.filter(
+    (note) =>
+      note.title.toLowerCase().includes(normalizedValue) ||
+      note.content.toLowerCase().includes(normalizedValue)
+  );
+
+  if (filteredNotes.length === 0) {
+    noteUl.innerHTML = `
+        <li class="text-center text-gray-500">
+            <p>No notes found</p>
+        </li>
+        `;
+    pinnedNoteUl.innerHTML = `
+        <li class="text-center text-gray-500">
+            <p>No notes found</p>
+        </li>
+    `;
+  } else {
+    renderNotes(filteredNotes);
+  }
+};
+
 export const renderNotes = (notes) => {
   if (notes === null) {
     pinnedNoteUl.innerHTML = `

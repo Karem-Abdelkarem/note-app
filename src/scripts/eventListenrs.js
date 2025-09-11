@@ -3,9 +3,10 @@ import {
   menuIcon,
   searchBar,
   searchIcon,
+  searchInput,
   sidebar,
 } from "./elements";
-import { deleteNote, noteDetails } from "./utils";
+import { deleteNote, noteDetails, onSearchInputChange } from "./utils";
 
 export const initNotesListeners = () => {
   document.querySelectorAll(".delete-btn").forEach((btn) => {
@@ -31,9 +32,13 @@ export const initControllerEvents = () => {
   closeSidebarIcon.addEventListener("click", () => {
     sidebar.classList.add("hidden");
   });
-  //  search bar event
+  //  open and close search bar
   searchIcon.addEventListener("click", () => {
     searchBar.classList.toggle("top-0");
+    searchInput.focus();
   });
-  //  add note
+  //  search bar function
+  searchInput.addEventListener("input", (e) => {
+    onSearchInputChange(e.target.value);
+  });
 };

@@ -7,7 +7,6 @@ import {
   menuIcon,
   noteErrorMessage,
   noteInput,
-  searchBar,
   searchIcon,
   sidebar,
   titleErrorMessage,
@@ -78,7 +77,7 @@ closeSidebarIcon.addEventListener("click", () => {
 });
 //  search bar event
 searchIcon.addEventListener("click", () => {
-  searchBar.classList.toggle("top-0");
+  window.location.href = "index.html";
 });
 //  add note
 addNoteBtn.addEventListener("click", () => {

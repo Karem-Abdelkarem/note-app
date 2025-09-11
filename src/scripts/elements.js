@@ -16,3 +16,4 @@ export const authorErrorMessage = document.querySelector(
   ".author-error-message"
 );
 export const noteErrorMessage = document.querySelector(".note-error-message");
+export const searchInput = document.querySelector(".search-input");
