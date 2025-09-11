@@ -5,13 +5,20 @@ import {
   searchIcon,
   sidebar,
 } from "./elements";
-import { deleteNote } from "./utils";
+import { deleteNote, noteDetails } from "./utils";
 
 export const initNotesListeners = () => {
   document.querySelectorAll(".delete-btn").forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      const index = parseInt(e.target.dataset.index);
+      e.stopPropagation();
+      const index = parseInt(e.currentTarget.dataset.index);
       deleteNote(index);
+    });
+  });
+  document.querySelectorAll(".note-li").forEach((note) => {
+    note.addEventListener("click", (e) => {
+      const index = parseInt(e.currentTarget.dataset.index);
+      noteDetails(index);
     });
   });
 };

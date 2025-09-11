@@ -1,4 +1,4 @@
-import { noteUl, pinnedNoteUl } from "./elements";
+import { noteDetailsSection, noteUl, pinnedNoteUl } from "./elements";
 import { initNotesListeners } from "./eventListenrs";
 
 export const fetchFromDB = (key) => {
@@ -53,7 +53,7 @@ export const renderNotes = (notes) => {
     const index = notes.findIndex((d) => d.id === note.id);
 
     const noteTemplate = `
-        <li class="note-element cursor-pointer rounded-lg hover:bg-gray-hover transition-all p-2.5">
+        <li class="note-li cursor-pointer rounded-lg hover:bg-gray-hover transition-all p-2.5" data-index="${index}">
             <h2 class="text-black text-[16px] leading-7 ">${note.title}</h2>
             <p class="text-gray-500 text-[13px] leading-5 mt-1 mb-4 overflow-hidden text-ellipsis">
             ${note.content}
@@ -74,6 +74,27 @@ export const renderNotes = (notes) => {
   pinnedNoteUl.innerHTML = pinnedList;
   noteUl.innerHTML = normalList;
   initNotesListeners();
+};
+
+export const noteDetails = (index) => {
+  if (noteDetailsSection.classList.contains("left-full")) {
+    noteDetailsSection.classList.remove("left-full");
+  }
+  noteDetailsSection.classList.add("left-0");
+
+  const notes = fetchFromDB("notes") || [];
+
+  noteDetailsSection.innerHTML = `
+    <h1 class="text-[26px] leading-8">${notes[index].title}</h1>
+    <div class="text-gray-500 text-sm mt-3.5 mb-9">
+        <span>${notes[index].date}</span>
+        /
+        <span>By ${notes[index].author}</span>
+    </div>
+    <p class="leading-7">
+        ${notes[index].content}
+    </p>
+  `;
 };
 
 export const initApp = () => {
