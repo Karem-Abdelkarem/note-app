@@ -21,6 +21,31 @@ export const deleteNote = (index) => {
 };
 
 export const renderNotes = (notes) => {
+  if (notes === null) {
+    pinnedNoteUl.innerHTML = `
+        <li class="text-center text-gray-500">
+            <p>Pinned your important notes</p>
+        </li>
+        `;
+    noteUl.innerHTML = `
+        <li class="text-center text-gray-500">
+            <p>Add your first note</p>
+        </li>
+    `;
+    return;
+  } else if (notes.length === 0) {
+    pinnedNoteUl.innerHTML = `
+        <li class="text-center text-gray-500">
+            <p>Pinned your important notes</p>
+        </li>
+        `;
+    noteUl.innerHTML = `
+        <li class="text-center text-gray-500">
+            <p>Add your first note</p>
+        </li>
+    `;
+    return;
+  }
   let pinnedList = "";
   let normalList = "";
 
