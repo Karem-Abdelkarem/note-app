@@ -17,21 +17,54 @@
 
 <body>
   <main class="flex text-black font-inter overflow-hidden transition-all">
-    <!-- Slide bar on mobile view -->
-    <section class="sidebar px-4 py-5 bg-gray-hover flex-1 min-w-[204px] h-screen hidden">
-      <header class="pt-2.5">
-        <img class="close-sidebar cursor-pointer" src="./assets/cross.svg" alt="close side bar icon">
+    <!-- Slide bar -->
+    <section
+      class="sidebar relative px-4 py-5 lg:px-6 bg-gray-hover min-w-[204px] lg:min-w-[258px] h-screen hidden lg:block">
+      <header class="lg:pt-5">
+        <img class="close-sidebar cursor-pointer lg:hidden" src="./assets/cross.svg" alt="close side bar icon">
+        <a href="index.html" class="hidden lg:block">
+          <h1 class="text-[15px] font-aclonica font-normal text-orange-300">
+            Almdrasa Note
+          </h1>
+        </a>
       </header>
-      <article class="relative flex flex-col items-start gap-1 mt-10 p-3">
+      <article class="mt-14 min-w-[210px] hidden lg:block">
+        <form class="transition-all" action="">
+          <label class="flex bg-white px-3 py-2 rounded-[7px]">
+            <svg class="pr-1.5 w-[20px] stroke-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+              fill="none">
+              <g clip-path="url(#clip0_357_13)">
+                <path
+                  d="M9.06226 15.625C12.6866 15.625 15.6248 12.6869 15.6248 9.0625C15.6248 5.43813 12.6866 2.5 9.06226 2.5C5.43789 2.5 2.49976 5.43813 2.49976 9.0625C2.49976 12.6869 5.43789 15.625 9.06226 15.625Z"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M13.7024 13.7031L17.4993 17.5" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </g>
+              <defs>
+                <clipPath id="clip0_357_13">
+                  <rect width="20" height="20" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+            <input class="search-input flex-1 outline-0  w-full" id="search" type="search" placeholder="search">
+          </label>
+        </form>
+      </article>
+      <article class="relative flex flex-col items-start gap-1 mt-10 p-3 lg:mt-9 lg:ml-2">
         <a href="index.html"><button
             class="text-[16px] text-black leading-7 after:content-[''] after:absolute after:h-5 after:w-[3px] after:bg-orange-300 after:left-0 after:top-[15px] cursor-pointer">Notes</button></a>
         <a href="add-note.html"><button class="text-[16px] text-gray-500 leading-7 cursor-pointer">Add
             Notes</button></a>
       </article>
+      <button
+        class="arrow-open-btn hidden lg:absolute lg:-right-3 lg:top-32 lg:bg-white lg:size-7 lg:z-10 lg:hidden items-center justify-center lg:border-1 lg:rounded-full lg:border-gray-300 lg:rotate-180 lg:cursor-pointer">
+        <img src="./assets/arrow.svg" alt="">
+      </button>
     </section>
     <!-- Home Page -->
-    <section class="relative px-4 py-5 min-w-screen h-screen flex-1 overflow-y-auto overflow-x-hidden transition-all">
-      <header class="main-header relative mb-12 w-full transition-all">
+    <section
+      class="relative px-4 py-5 min-w-screen h-screen overflow-x-hidden transition-all lg:grid lg:grid-cols-[322px_minmax(auto,600px)_100px]">
+      <header class="main-header relative mb-12 w-full transition-all lg:hidden">
         <article class="flex items-center justify-between">
           <img class="menu-icon w-[40px] p-2 cursor-pointer" src="./assets/Menu.svg" alt="side bar icon">
           <a href="index.html">
@@ -67,36 +100,44 @@
         </article>
       </header>
       <!-- note details -->
-      <section class="note-details absolute bg-white w-screen h-screen px-4 left-full z-10 transition-all">
-        <h1 class="text-[26px] leading-8">Business Partners Work at Modern Office</h1>
+      <section
+        class="note-details absolute lg:static bg-white w-screen lg:w-[600px] h-screen px-4 left-full lg:left-0 z-10 lg:mt-24 lg:ml-25 transition-all">
+        <h1 class="text-[26px] leading-8"></h1>
         <div class="text-gray-500 text-sm mt-3.5 mb-9">
-          <span>Feb 8, 2025</span>
-          /
-          <span>By Kareem</span>
+          <span></span>
+          <span></span>
         </div>
         <p class="leading-7">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi, distinctio placeat rem at dicta aliquid,
-          officia illum incidunt fugiat voluptatem, tempore quod nemo. Quod beatae quos nam debitis, rem vero
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus a minima voluptatum fugit, harum iusto facilis
-          cum nostrum nulla quae laboriosam. Cumque recusandae deleniti quibusdam asperiores suscipit, esse debitis
-          sint.
         </p>
       </section>
-      <!-- pinned notes -->
-      <section class="px-2.5 w-full">
-        <h3 class="uppercase text-orange-300 mb-2 text-[13px]">pinned</h2>
-          <ul class="pinned-note-ul">
+      <section
+        class="notes-section relative h-screen lg:bg-white lg:mt-7 lg:w-[322px] lg:-order-1 lg:before:absolute lg:before:content-[''] lg:before:w-[1px] lg:before:h-[calc(100%+130px)] lg:before:bg-gray-300 lg:before:-right-1 lg:before:-top-12">
+        <!-- pinned notes -->
+        <section class="px-2.5 w-full">
+          <h3 class="uppercase text-orange-300 mb-2 text-[13px]">pinned</h2>
+            <ul class="pinned-note-ul">
+            </ul>
+        </section>
+        <button
+          class="arrow-btn hidden lg:absolute lg:-right-4 lg:top-20 lg:bg-white lg:size-7 lg:z-10 lg:flex items-center justify-center lg:border-1 lg:rounded-full lg:border-gray-300 lg:cursor-pointer"><img
+            src="./assets/arrow.svg" alt=""></button>
+        <!-- notes list -->
+        <section class="px-2.5 mt-[22px] w-full">
+          <div class="relative flex items-center py-2">
+            <h3
+              class="text-orange-300 text-[13px] after:content-[''] after:absolute after:w-[calc(100%+40px)] after:h-[1px] after:bg-gray-300 after:top-0 after:-left-[25px] before:content-[''] before:absolute before:w-[calc(100%+40px)] before:h-[1px] before:bg-gray-300 before:bottom-0 before:-left-[25px]">
+              Notes</h3>
+          </div>
+          <ul class="notes-ul mt-4">
           </ul>
+        </section>
       </section>
-      <!-- notes list -->
-      <section class="px-2.5 mt-[22px] w-full">
-        <div class="relative flex items-center py-2">
-          <h3
-            class="text-orange-300 text-[13px] after:content-[''] after:absolute after:w-screen after:h-[1px] after:bg-gray-300 after:top-0 after:-left-[25px] before:content-[''] before:absolute before:w-screen before:h-[1px] before:bg-gray-300 before:bottom-0 before:-left-[25px]">
-            Notes</h3>
-        </div>
-        <ul class="notes-ul mt-4">
-        </ul>
+      <section class="hidden lg:flex lg:items-center">
+        <a href="add-note.html" class=""><button
+            class="lg:flex lg:items-center lg:justify-center lg:size-16 lg:bg-orange-300 lg:rounded-full lg:p-2.5 lg:shadow-[0_9px_25px_rgba(236,113,96,0.26)] lg:cursor-pointer">
+            <img src="./assets/plus.svg" alt="">
+        </a>
+        </button>
       </section>
     </section>
   </main>

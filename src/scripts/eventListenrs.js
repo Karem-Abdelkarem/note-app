@@ -1,6 +1,9 @@
 import {
+  arrowBtn,
+  arrowOpenBtn,
   closeSidebarIcon,
   menuIcon,
+  notesSection,
   searchBar,
   searchIcon,
   searchInput,
@@ -20,6 +23,10 @@ export const initNotesListeners = () => {
     note.addEventListener("click", (e) => {
       const index = parseInt(e.currentTarget.dataset.index);
       noteDetails(index);
+      document.querySelectorAll(".note-li").forEach((n) => {
+        n.classList.remove("lg:bg-gray-hover");
+      });
+      note.classList.add("lg:bg-gray-hover");
     });
   });
 };
@@ -38,7 +45,22 @@ export const initControllerEvents = () => {
     searchInput.focus();
   });
   //  search bar function
-  searchInput.addEventListener("input", (e) => {
-    onSearchInputChange(e.target.value);
+  searchInput.forEach((input) => {
+    input.addEventListener("input", (e) => {
+      onSearchInputChange(e.target.value);
+    });
+  });
+  // close notes section
+  arrowBtn.addEventListener("click", () => {
+    notesSection.classList.add("hidden");
+    if (arrowOpenBtn.classList.contains("lg:hidden")) {
+      arrowOpenBtn.classList.remove("lg:hidden");
+    }
+    arrowOpenBtn.classList.add("lg:flex");
+  });
+  // open notes section
+  arrowOpenBtn.addEventListener("click", () => {
+    notesSection.classList.remove("hidden");
+    arrowOpenBtn.classList.add("lg:hidden");
   });
 };
